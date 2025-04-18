@@ -6,7 +6,6 @@
   <title>Simmery Nails</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    /* === Base styles === */
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -30,7 +29,6 @@
     .logo { display: flex; align-items: center; }
     .logo img { height: 60px; margin-right: 10px; }
 
-    /* === Navigation === */
     nav {
       display: flex;
       align-items: center;
@@ -43,14 +41,13 @@
     }
     nav a:hover { text-decoration: underline; }
 
-    /* Mobile nav toggle */
     .nav-toggle {
-      display: none; /* shown only on small screens */
+      display: none;
       background: none;
       border: none;
       cursor: pointer;
       padding: 0.5rem;
-      z-index: 110; /* above nav for clickability */
+      z-index: 110;
     }
     .hamburger,
     .hamburger::before,
@@ -65,11 +62,9 @@
     .hamburger::before { position: relative; top: -6px; }
     .hamburger::after { position: relative; top: 4px; }
 
-    /* === Section animation === */
     section { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
     section.visible { opacity: 1; transform: translateY(0); }
 
-    /* === Utilities === */
     .section-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
@@ -89,7 +84,6 @@
     }
     .btn-primary:hover { opacity: .9; }
 
-    /* === Hero === */
     .hero {
       background-color: #ffeef5;
       text-align: center;
@@ -103,7 +97,6 @@
     }
     .hero p { font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto; }
 
-    /* === Works grid === */
     #works { padding: 4rem 2rem; }
     .work-grid {
       display: grid;
@@ -118,7 +111,6 @@
     }
     .work-grid img:hover { transform: scale(1.03); }
 
-    /* === Services === */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -132,9 +124,16 @@
       padding: 2rem;
       text-align: center;
     }
-    .service h3 { color: #8b004b; margin-bottom: 1rem; }
+    .service h3 {
+      color: #8b004b;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    .service p {
+      font-size: 0.95rem;
+      color: #444;
+    }
 
-    /* === Price list === */
     .price-list { padding: 4rem 2rem; text-align: center; }
     .price-list img {
       width: 100%;
@@ -145,7 +144,6 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    /* === Full‑width gallery === */
     #gallery { padding: 0; }
     .full-gallery-grid {
       display: grid;
@@ -159,7 +157,6 @@
       display: block;
     }
 
-    /* === Testimonials === */
     .testimonials { padding: 4rem 2rem; background-color: #fffef8; }
     .testimonial {
       background-color: #fff;
@@ -170,10 +167,8 @@
       font-style: italic;
     }
 
-    /* === About === */
     .about { background-color: #fff0f5; padding: 4rem 2rem; text-align: center; }
 
-    /* === Instagram === */
     .instagram { padding: 4rem 2rem; }
     .instagram-images {
       display: grid;
@@ -182,9 +177,14 @@
     }
     .instagram-images img { width: 100%; border-radius: 12px; }
 
-    /* === Contact === */
     .contact-form { background-color: #fff0f5; padding: 4rem 2rem; text-align: center; }
-    form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
     input, textarea {
       padding: 0.8rem;
       border: 1px solid #ccc;
@@ -201,7 +201,6 @@
     }
     button[type="submit"]:hover { opacity: .9; }
 
-    /* === Footer === */
     footer {
       background-color: #8b004b;
       color: white;
@@ -209,12 +208,8 @@
       padding: 2rem 1rem;
     }
 
-    /* === Responsive behaviour === */
     @media (max-width: 768px) {
-      /* show hamburger */
       .nav-toggle { display: block; }
-
-      /* transform nav into vertical dropdown */
       nav {
         position: absolute;
         top: 100%;
@@ -225,41 +220,92 @@
         align-items: center;
         gap: 1rem;
         padding: 1rem 0;
-        display: none; /* hidden by default */
+        display: none;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
         z-index: 105;
       }
       nav.open { display: flex; }
     }
-  </style>
+    .services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 1rem;
+}
+.service {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 1.2rem;
+  text-align: center;
+}
+.service h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+.service p {
+  font-size: 0.85rem;
+}
+.about {
+  background-color: #fff0f5;
+  padding: 4rem 4rem;
+  text-align: center;
+  width: 100%;
+}
+
+.about p {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 900px; /* wider text area */
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.btn-primary {
+  margin-top: 2rem;
+}
+</style>
 </head>
 <body>
   <header>
     <div class="logo">
       <img src="logo.png" alt="Simmery Nails Logo" />
     </div>
-    <!-- Hamburger toggle (visible on mobile) -->
     <button class="nav-toggle" aria-label="Toggle navigation">
       <span class="hamburger"></span>
     </button>
     <nav>
+      <a href="#">Home</a>
       <a href="#services">Services</a>
       <a href="#price-list">Prices</a>
       <a href="#works">Works</a>
       <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="#policies">Policies</a>
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
-    <h1>Premium Mobile Nail Services</h1>
-    <p>Luxurious manicures and pedicures delivered to your doorstep. Perfect nails, wherever you are.</p>
-    <button class="btn-primary">Book Now</button>
+    <h1>Mobile Nail Services</h1>
+    <p>Hi Client! Welcome to Simmery Nails. If you’re looking for a nail 
+      technician that can revitalize your nails in the comfort of your own home without an additional charge, then look no further. 
+      I offer mobile nail services around Walsall and surrounding areas (ladies only), 
+      and have been qualified in manicures, gel polish, builder gel extensions, 
+      acrylic extensions, nail art and soak offs, since 2021.
+    </p>
+    <br>
+    <br>
+    <a href="https://simmerynails.setmore.com" class="btn-primary" target="_blank">Book Now</a>
+
   </section>
 
-  <!-- Works (Our Work) Section -->
   <section id="works">
     <h2 class="section-title">Our Work</h2>
     <div class="work-grid">
@@ -271,28 +317,37 @@
     </div>
   </section>
 
-  <!-- Services -->
   <section id="services" class="services">
     <div class="service">
-      <h3>Signature Spa Mani</h3>
-      <p>Indulgent treatments for hands, including exfoliation and massage.</p>
+      <h3>💅 Manicure</h3>
+      <p>Perfect for a clean & tidy look, dry skin around the nails, or bitten nails. The massage helps increase circulation in the hands.</p>
     </div>
     <div class="service">
-      <h3>Chic Gel Set</h3>
-      <p>Durable, glossy gel polish in vibrant or nude hues.</p>
+      <h3>✨ Gel Polish</h3>
+      <p>Ideal if you want long-lasting polish without adding length or strength to your nails.</p>
     </div>
     <div class="service">
-      <h3>Bridal Glam Package</h3>
-      <p>Luxury nails for the bride and bridal party on your big day.</p>
+      <h3>🛡️ Acrylic Overlay</h3>
+      <p>Great for strengthening your nails and minimizing UV exposure. Ideal for manual workers or those keeping nail length.</p>
+    </div>
+    <div class="service">
+      <h3>🌿 Builder Gel Overlay</h3>
+      <p>Lightweight and natural-looking. Adds structure and strength while keeping your nails short or natural length.</p>
+    </div>
+    <div class="service">
+      <h3>💎 Acrylic / Builder Extensions</h3>
+      <p>Best if you want to add extra length and structure to your natural nails.</p>
+    </div>
+    <div class="service">
+      <h3>🧼 Soak Off</h3>
+      <p>Essential to prevent short and long-term damage to natural nails when removing enhancements.</p>
     </div>
   </section>
 
-  <!-- Price list -->
   <section id="price-list" class="price-list">
     <img src="pricelist.png" alt="Simmery Nails Price List">
   </section>
 
-  <!-- Full‑width Gallery -->
   <section id="gallery">
     <h2 class="section-title">Gallery</h2>
     <div class="full-gallery-grid">
@@ -305,7 +360,6 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section class="testimonials">
     <h2 class="section-title">What Clients Say</h2>
     <div class="testimonial">
@@ -316,16 +370,14 @@
     </div>
   </section>
 
-  <!-- About -->
   <section id="about" class="about">
     <h2 class="section-title">About Simmery Nails</h2>
     <p>Simmery Nails is all about convenience and elegance. We bring beauty straight to your doorstep, offering luxurious nail services with a personal touch.</p>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="contact-form">
     <h2 class="section-title">Get in Touch</h2>
-    <form>
+    <form action="mailto:simranshinder@gmail.com" method="POST" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -338,9 +390,7 @@
     <p>&copy; 2025 Simmery Nails. All rights reserved.</p>
   </footer>
 
-  <!-- JS: Reveal sections & mobile nav toggle -->
   <script>
-    /* IntersectionObserver reveal */
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -351,7 +401,6 @@
     }, { threshold: 0.1 });
     sections.forEach(section => observer.observe(section));
 
-    /* Mobile nav toggle */
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('header nav');
     navToggle.addEventListener('click', () => {
@@ -360,4 +409,4 @@
   </script>
 </body>
 </html>
-a
+
