@@ -380,6 +380,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+// js/nav-clean.js
+(function() {
+  // map index.html#… anchors → section IDs + clean paths
+  const map = {
+    'home':        { id: 'home',        path: '/home'       },
+    'services':    { id: 'services',    path: '/treatments' },
+    'price-list':  { id: 'price-list',  path: '/prices'     },
+    'works':       { id: 'works',       path: '/works'      },
+    'testimonials':{ id: 'testimonials',path: '/reviews'    },
+    'gallery':     { id: 'gallery',     path: '/gallery'    },
+    'contact':     { id: 'contact',     path: '/contact'    }
+  };
+
+  function scrollAndClean(hash, replace) {
+    const info = map[hash];
+    if (!info) return;
+    const el = document.getElementById(info.id);
+    if (!el) return;
+
+    el.scrollIntoView({ behavior: 'smooth' });
+    const method = replace ? history.replaceState : history.pushState;
+    method(null, '', info.path);
+  }
+
+  // Only run the “load + hijack + back/forward” logic on index.html or root (“/”)
+  const p = location.pathname.replace(/\/$/, '');
+  const isIndex = p === '' || p === '/index.html';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (isIndex) {
+      // 1) On load: if ?#anchor or clean path → scroll + replaceState
+      const h = location.hash.replace('#', '');
+      if (h && map[h]) {
+        scrollAndClean(h, true);
+      } else {
+        const key = Object.keys(map).find(k => map[k].path.slice(1) === p.slice(1));
+        if (key) scrollAndClean(key, true);
+      }
+
+      // 2) Hijack clicks on index.html#… links
+      document.querySelectorAll('a[href^="index.html#"]').forEach(a => {
+        const hash = a.getAttribute('href').split('#')[1];
+        if (!map[hash]) return;
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          scrollAndClean(hash, false);
+        });
+      });
+
+      // 3) Back/forward buttons
+      window.addEventListener('popstate', () => {
+        const raw = location.pathname.replace(/^\//, '');
+        const key = Object.keys(map).find(k => map[k].path.slice(1) === raw);
+        if (key) scrollAndClean(key, true);
+        else location.reload();
+      });
+    }
+    // else: on policy.html we do nothing—clicking Home goes to index.html#home,
+    // and when that page loads, the above logic will fire to clean the URL.
+  });
+})();
 
   </script>
 </body>
