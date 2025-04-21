@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simmery Nails</title>
+  <title>Simmery Nails - Policy</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -15,7 +15,6 @@
       background-color: #fff;
       color: #333;
       scroll-behavior: smooth;
-      
     }
 
     header {
@@ -68,285 +67,6 @@
 
     section { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
     section.visible { opacity: 1; transform: translateY(0); }
-
-    .section-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: #8b004b;
-      margin-bottom: 2rem;
-    }
-    .btn-primary {
-      background-color: #8b004b;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 30px;
-      margin-top: 2rem;
-      cursor: pointer;
-    }
-    .btn-primary:hover { opacity: .9; }
-
-    .hero {
-      background-color: #ffeef5;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: #8b004b;
-      margin-bottom: 1rem;
-    }
-    .hero p { font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto; }
-
-    #works { padding: 4rem 2rem; }
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .work-grid img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition: transform .3s ease;
-    }
-    .work-grid img:hover { transform: scale(1.03); }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 4rem 2rem;
-    }
-    .service {
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-      padding: 2rem;
-      text-align: center;
-    }
-    .service h3 {
-      color: #8b004b;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-    .service p {
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    .price-list { padding: 4rem 2rem; text-align: center; }
-    .price-list img {
-      width: 100%;
-      max-width: 800px;
-      display: block;
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    #gallery { padding: 0; }
-    .full-gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
-      gap: 0;
-    }
-    .full-gallery-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .testimonials { padding: 4rem 2rem; background-color: #fffef8; }
-    .testimonial {
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
-
-    .about { background-color: #fff0f5; padding: 4rem 2rem; text-align: center; }
-
-    .instagram { padding: 4rem 2rem; }
-    .instagram-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-    .instagram-images img { width: 100%; border-radius: 12px; }
-
-    .contact-form { background-color: #fff0f5; padding: 4rem 2rem; text-align: center; }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    button[type="submit"] {
-      background-color: #8b004b;
-      color: white;
-      border: none;
-      padding: 0.8rem;
-      border-radius: 30px;
-      cursor: pointer;
-    }
-    button[type="submit"]:hover { opacity: .9; }
-
-    footer {
-      background-color: #8b004b;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle { display: block; }
-      nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #fff0f5;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 0;
-        display: none;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-        z-index: 105;
-      }
-      nav.open { display: flex; }
-    }
-    .services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  padding: 3rem 1rem;
-}
-.service {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  padding: 1.2rem;
-  text-align: center;
-}
-.service h3 {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-}
-.service p {
-  font-size: 0.5rem;
-}
-.about {
-  background-color: #fff0f5;
-  padding: 4rem 4rem;
-  text-align: center;
-  width: 100%;
-}
-
-.about p {
-  max-width: 1000px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #444;
-}
-.hero p {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 900px; /* wider text area */
-  margin: 0 auto;
-  line-height: 1.8;
-}
-.btn-primary {
-  margin-top: 2rem;
-}
-
-body {
-  font-family: 'Gabriola', cursive;
-  font-size: 18px;
-  color: #333;
-}
-
-h1, h2, h3, h4, h5, h6,
-nav a, .btn-primary, input, textarea, button {
-  font-family: 'Gabriola', cursive;
-}
-
-.hero h1 {
-  font-size: 36px;
-}
-
-.hero p,
-.about p,
-.section-title,
-footer p {
-  font-size: 20px;
-}
-
-.section-title {
-  font-size: 32px;
-}
-
-.service h3 {
-  font-size: 22px;
-}
-
-nav a {
-  font-size: 20px;
-}
-
-.btn-primary {
-  font-size: 18px;
-}
-
-input, textarea, button[type="submit"] {
-  font-size: 18px;
-}
-   
-.hero h1 {
-  font-size: 41px;
-}
-
-.section-title {
-  font-size: 37px;
-}
-
-.service h3 {
-  font-size: 27px;
-}
-
-.service p,
-.hero p,
-.about p,
-footer p {
-  font-size: 25px;
-}
-
-nav a {
-  font-size: 25px;
-}
-
-.btn-primary,
-input,
-textarea,
-button[type="submit"] {
-  font-size: 23px;
-}
-
 
     body {
       margin: 0;
@@ -402,6 +122,49 @@ button[type="submit"] {
       padding: 2rem 1rem;
       margin-top: 3rem;
     }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff0f5;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        display: none;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        z-index: 105;
+      }
+      nav.open { display: flex; }
+    }
+
+    body {
+      font-family: 'Gabriola', cursive;
+      font-size: 18px;
+      color: #333;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    nav a, .btn-primary, input, textarea, button {
+      font-family: 'Gabriola', cursive;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+
+    h1 {
+      font-size: 41px;
+    }
+
+    nav a {
+      font-size: 25px;
+    }
   </style>
 </head>
 <body>
@@ -413,22 +176,23 @@ button[type="submit"] {
       <span class="hamburger"></span>
     </button>
     <nav>
-     <a href="index.html#services">Services</a>
-      <a href="index.html#price-list">Prices</a>
-      <a href="index.html#works">Works</a>
-      <a href="index.html#gallery">Gallery</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="policy.html">Policy</a>
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="index.html#price-list" class="nav-link">Prices</a>
+      <a href="index.html#works" class="nav-link">Works</a>
+      <a href="index.html#gallery" class="nav-link">Gallery</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+      <a href="policy.html" class="nav-link">Policy</a>
     </nav>
   </header>
-z
+
   <div class="container">
     <h1>Policies</h1>
     <ul>
       <li>Ladies only (16+ years).</li>
       <li>Any disrespectful or inappropriate behaviour will result in treatments being abandoned/cancelled.</li>
-      <li>30% deposit required to secure booking. This is non-refundable unless your appointment is cancelled/rescheduled at least 24 hours prior to your appointment.</li>
+      <li>30% deposit required to secure booking. This is non-refundable unless your appointment is cancelled/rescheduled at least 24 hours before to your appointment.</li>
       <li>Appointments can only be rescheduled once without losing your deposit.</li>
       <li>15 minute grace period before the appointment is rescheduled.</li>
       <li>No guests. Please keep pets and children in a separate room to avoid spillages/damage to property.</li>
@@ -446,7 +210,7 @@ z
         </ul>
       </li>
       <li>Infills are only applicable within 2-3 weeks of original application depending on nail growth. If they are too grown out, chipping, or lifting, they must be soaked off and reapplied.</li>
-      <li>Infills will only be carried out twice before removal and reapplication to maintain natural nail health.</li>
+      <li>Infills will only be carried out twice before removal and reapplication to review natural nail health.</li>
       <li>Infills & Soak Offs will only be carried out if the product was applied by Simmery Nails.</li>
       <li>Please contact me if you have any health conditions prior to booking. Your desired treatment may not be suitable and an alternative can be offered.</li>
       <li>Your health is of utmost importance.</li>
@@ -454,8 +218,41 @@ z
   </div>
 
   <footer>
-    <p>Contact: bookings@simmerynails.com | 123-456-7890</p>
+    <p>Contact: simmerynails@gmail.com | 07715643656</p>
     <p>&copy; 2025 Simmery Nails. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('header nav');
+    
+    // Toggle menu when hamburger is clicked
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+    
+    // Close menu when a navigation link is clicked
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Only close the menu if it's currently open and we're in mobile view
+        if (window.innerWidth <= 768 && navMenu.classList.contains('open')) {
+          navMenu.classList.remove('open');
+        }
+      });
+    });
+    
+    // Also close menu when clicking outside the nav area
+    document.addEventListener('click', (event) => {
+      const isClickInsideNav = navMenu.contains(event.target);
+      const isClickOnToggle = navToggle.contains(event.target);
+      
+      // If the menu is open and the click is outside nav and toggle button
+      if (navMenu.classList.contains('open') && !isClickInsideNav && !isClickOnToggle) {
+        navMenu.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
