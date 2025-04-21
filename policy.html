@@ -274,6 +274,83 @@ nav a, .btn-primary, input, textarea, button {
         navMenu.classList.remove('open');
       }
     });
+  
+document.addEventListener('DOMContentLoaded', () => {
+  // map index.html#… anchors → “clean” paths and section-IDs
+  const map = {
+    'home':        {id: 'home',        path: '/home'},
+    'services':    {id: 'services',    path: '/treatments'},
+    'price-list':  {id: 'price-list',  path: '/prices'},
+    'works':       {id: 'works',       path: '/works'},
+    'testimonials':{id: 'testimonials',path: '/reviews'},
+    'gallery':     {id: 'gallery',     path: '/gallery'},
+    'contact':     {id: 'contact',     path: '/contact'}
+    // leave out policies – that one really goes to policy.html
+  };
+
+  function scrollAndClean(hash, replace) {
+    const info = map[hash];
+    if (!info) return;
+    const el = document.getElementById(info.id);
+    if (!el) return;
+
+    // scroll into view
+    el.scrollIntoView({behavior: 'smooth'});
+
+    // update the URL bar
+    if (replace) {
+      history.replaceState(null, '', info.path);
+    } else {
+      history.pushState(null, '', info.path);
+    }
+  }
+
+  // 1) On initial load: if URL contains index.html#something, or path="/something"
+  //    we want to scroll there but only replaceState (no extra entry)
+  const initialHash = location.hash.replace('#', '');
+  if (initialHash && map[initialHash]) {
+    scrollAndClean(initialHash, true);
+  } else {
+    // also handle someone landing on /home directly
+    const raw = location.pathname.replace(/^\//, '');
+    for (const key in map) {
+      if (map[key].path.slice(1) === raw) {
+        scrollAndClean(key, true);
+        break;
+      }
+    }
+  }
+
+  // 2) Hijack clicks on nav-links that point to index.html#…
+  document.querySelectorAll('nav a.nav-link').forEach(a => {
+    const href = a.getAttribute('href');
+    const m = href.match(/index\.html#(.+)$/);
+    if (!m) return; // skip policy.html or external links
+
+    const hash = m[1];
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      scrollAndClean(hash, false);
+    });
+  });
+
+  // 3) Handle back/forward buttons:
+  window.addEventListener('popstate', () => {
+    // if they go “back” to /services, scroll there (no new history entry)
+    const rawPath = location.pathname.replace(/^\//, '');
+    for (const key in map) {
+      if (map[key].path.slice(1) === rawPath) {
+        // use replace so we don’t stack history
+        scrollAndClean(key, true);
+        return;
+      }
+    }
+    // otherwise (e.g. they nav back to / or to /policy.html), do a normal reload:
+    location.reload();
+  });
+});
+
+
   </script>
 </body>
 </html>
