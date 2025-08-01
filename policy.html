@@ -90,7 +90,7 @@
       font-size: 2.4rem;
       text-align: center;
       color: var(--brand-pink);
-      margin: 0 0 2rem;
+      margin: 0 0 1rem;
     }
     h2 {
       font-family: 'Playfair Display', serif;
@@ -98,11 +98,52 @@
       color: var(--brand-pink);
       margin: 2rem 0 .75rem;
     }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--brand-pink);
+      margin: 1.5rem 0 .5rem;
+    }
     ul {
       padding-left: 1.2rem;
       list-style: disc;
     }
     li { margin-bottom: .6rem; }
+    
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1.1em;
+    }
+    
+    .important-notice {
+      background-color: var(--brand-bg);
+      border-left: 4px solid var(--brand-pink);
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 4px;
+    }
+    
+    .important-notice p {
+      margin-bottom: 0.5rem;
+    }
+    
+    .important-notice p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .warning {
+      color: var(--brand-pink);
+      font-weight: bold;
+    }
+    
+    .highlight {
+      background-color: var(--brand-bg);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
 
     /* ───── Footer ───────────────────────────────────────────────────── */
     footer {
@@ -112,6 +153,7 @@
       padding: 2rem 1rem;
     }
     footer img { height: 70px; margin-top: .75rem; }
+    footer a { color: #fff; text-decoration: underline; }
 
     /* ───── Mobile Nav ──────────────────────────────────────────────── */
     @media (max-width: 768px) {
@@ -150,73 +192,73 @@
   <!-- ═════ Main Content ═══════════════════════════════════════════════ -->
   <main>
     <h1>Policies</h1>
-
-    <section>
-      <h2>General</h2>
-      <ul>
-        <li>Ladies only (16&nbsp;years&nbsp;and over).</li>
-        <li>The postcode entered during booking must match the location you would like me to attend. If it differs, your appointment may be declined and your deposit forfeited.</li>
-        <li>Any disrespectful or inappropriate behaviour will result in treatment being stopped immediately with no refund of your deposit.</li>
-      </ul>
-    </section>
+    <p class="subtitle">Professional Nail Services - Booking Terms & Conditions</p>
+    
+    <div class="important-notice">
+      <p><strong>Ladies only (16+ years)</strong></p>
+      <p>The postcode entered in the postcode checker and the your details form must be where you wish for me to attend, otherwise your appointment may not be attended and you could lose your deposit.</p>
+      <p class="warning">Any disrespectful or inappropriate behaviour will result in treatments being abandoned/cancelled.</p>
+    </div>
 
     <section>
       <h2>Payment Information</h2>
+      <p>A <span class="highlight">30% deposit</span> is required to secure your booking.</p>
       <ul>
-        <li>A <strong>30&nbsp;% deposit</strong> is required to secure your booking.</li>
-        <li>You will receive a secure Zettle payment link by email within 24&nbsp;hours of booking. Please pay the deposit within 24&nbsp;hours of receiving the link to confirm your appointment.</li>
-        <li>The deposit is <strong>non-refundable</strong> unless the appointment is cancelled or rescheduled at least 24&nbsp;hours in advance.</li>
-        <li>The remaining balance is due at your appointment (card or cash). Payment links are for deposits only.</li>
+        <li>A Zettle payment link will be sent via email within 24 hours of you booking your slot</li>
+        <li>The deposit must be paid within 24 hours of the link being sent to secure your appointment</li>
+        <li>The deposit is <strong>non-refundable</strong> unless your appointment is cancelled/rescheduled at least 24 hours beforehand</li>
+        <li>The remaining cost is to be paid at the appointment</li>
+        <li>Please have your card or cash present as payment links are for deposits only</li>
       </ul>
     </section>
 
     <section>
-      <h2>Rescheduling &amp; Cancelling</h2>
+      <h2>Rescheduling/Cancelling</h2>
       <ul>
-        <li>Appointments can be rescheduled <strong>once</strong> only.</li>
-        <li>There is a 15-minute grace period. After this, the appointment will be marked as a no-show and rescheduled.</li>
-        <li>A minimum of 24&nbsp;hours’ notice is required to reschedule or cancel.</li>
+        <li>Appointments can only be rescheduled <span class="highlight">once</span></li>
+        <li>15 minute grace period before the appointment is rescheduled</li>
+        <li><strong>24 hours notice required</strong></li>
       </ul>
     </section>
 
     <section>
       <h2>Booking Guidelines</h2>
+      <p><strong>No guests.</strong> Please keep pets and children in a separate room to avoid spillages/damage to property.</p>
+      
+      <h3>Health & Safety Requirements</h3>
+      <p class="warning">Please do not book if you have any of the following in/on/around the nails, fingers, hands (and arms/elbows if booking a manicure):</p>
+      <p><em>You will lose your deposit (unless cancelled at least 24 hours before your appointment) and the treatment will not go ahead:</em></p>
       <ul>
-        <li>No guests. Please keep pets and children in a separate room to avoid spillages or damage.</li>
-        <li>Do <strong>not</strong> book if you have any of the following on the nails, fingers, hands (and arms/elbows for manicures):
-          <ul>
-            <li>Cuts, abrasions, open sores or broken skin</li>
-            <li>Numbness</li>
-            <li>Bruising or swelling</li>
-            <li>Separation of the nail plate from the nail bed</li>
-            <li>Scar tissue from recent injuries or surgery</li>
-            <li>Extremely weak nails</li>
-            <li>Broken bones</li>
-            <li>Contagious conditions such as impetigo, scabies, chickenpox or mumps (anywhere on the body)</li>
-          </ul>
-        </li>
+        <li>Cuts, abrasions, open sores, or broken skin</li>
+        <li>Numbness</li>
+        <li>Bruising or swelling</li>
+        <li>Separation of the nail plate from the nail bed</li>
+        <li>Scar tissue from recent injuries or surgeries</li>
+        <li>Extremely weak nails</li>
+        <li>Broken bones</li>
+        <li>Conditions like impetigo, scabies, chickenpox, or mumps (anywhere on the body)</li>
       </ul>
     </section>
 
     <section>
-      <h2>Infills &amp; Soak Offs</h2>
+      <h2>Infills/Soak Offs</h2>
       <ul>
-        <li>Infills are available within 2–3&nbsp;weeks of the original application, depending on nail growth.</li>
-        <li>If your nails are excessively grown out, chipping or lifting, they must be soaked off and reapplied.</li>
-        <li>Infills will be carried out a maximum of twice before removal and reapplication, allowing natural nail health to be assessed.</li>
-        <li>Infills and soak-offs are provided only for products applied by Simmery&nbsp;Nails.</li>
+        <li>Infills are only applicable within <span class="highlight">2-3 weeks</span> of original application depending on nail growth</li>
+        <li>If they are too grown out, chipping, or lifting, they must be soaked off and reapplied</li>
+        <li>Infills will only be carried out twice before removal and reapplication to review natural nail health</li>
+        <li class="warning">Infills & Soak Offs will only be carried out if the product was applied by Simmery Nails</li>
       </ul>
     </section>
 
     <section>
       <h2>Health Conditions</h2>
-      <p>Please inform me of any health conditions before booking. Your chosen treatment may not be suitable, and an alternative will be recommended. Your health is my top priority.</p>
+      <p>Please contact me if you have any health conditions prior to booking. Your desired treatment may not be suitable and an alternative can be offered. Your health is of utmost importance.</p>
     </section>
   </main>
 
   <!-- ═════ Footer ═════════════════════════════════════════════════════ -->
   <footer>
-    <p>Contact: <a href="mailto:simmerynails@gmail.com" style="color:#fff;text-decoration:underline;">simmerynails@gmail.com</a> · 07715&nbsp;643&nbsp;656</p>
+    <p>Contact: <a href="mailto:simmerynails@gmail.com">simmerynails@gmail.com</a> · 07715&nbsp;643&nbsp;656</p>
     <p>&copy; 2025&nbsp;Simmery&nbsp;Nails. All rights reserved.</p>
     <img src="logo1.png" alt="Simmery Nails logo">
   </footer>
