@@ -351,6 +351,35 @@ button[type="submit"] {
   font-size: 23px;
 }
 
+    /* Social icon styles */
+    .footer-social {
+      margin-top: 0.75rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .social-icon {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 50%;
+      padding: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .social-icon:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,0.15); }
+    .social-icon svg { width: 32px; height: 32px; fill: #1877f2; }
+    .social-follow {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
 </style>
 </head>
 <body>
@@ -427,22 +456,29 @@ button[type="submit"] {
   <section id="price-list" class="price-list">
     <img src="pricelist1.png" alt="Simmery Nails Price List">
   </section>
-  <a href="https://www.instagram.com/simmerynails" target="_blank" style="text-decoration: none; color: inherit;">
-    <section id="gallery" class="instagram" style="text-align: center; padding: 4rem 2rem; cursor: pointer;">
+  <section id="gallery" class="instagram" style="text-align: center; padding: 4rem 2rem;">
       <h2 class="section-title">Follow Us on Instagram</h2>
       <p style="font-size: 20px; margin-bottom: 1rem;">Stay connected and see more designs on <strong>@simmerynails</strong></p>
-      <div style="
-        display: inline-block;
-        background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-        color: white;
-        padding: 0.8rem 1.5rem;
-        font-size: 1.1rem;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-bottom: 2rem;
-        transition: opacity 0.3s ease;
-      ">Follow @simmerynails</div>
+      <div class="social-follow">
+        <a href="https://www.instagram.com/simmerynails" target="_blank" rel="noopener noreferrer" style="
+          display: inline-block;
+          background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+          color: white;
+          padding: 0.8rem 1.5rem;
+          font-size: 1.1rem;
+          border-radius: 30px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: opacity 0.3s ease;
+        ">Follow @simmerynails</a>
+        <div class="footer-social">
+          <a class="social-icon" href="https://www.facebook.com/profile.php?id=61580868324860" target="_blank" rel="noopener noreferrer" aria-label="Simmery Nails on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.1 5.66 21.22 10.44 21.98v-6.99H7.9v-2.99h2.54V9.41c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.74l-.44 2.99h-2.3v6.99C18.34 21.22 22 17.1 22 12.07z" />
+            </svg>
+          </a>
+        </div>
+      </div>
       <div class="full-gallery-grid">
         <img src="image9.png" alt="Gallery Image 1">
         <img src="image10.png" alt="Gallery Image 2">
@@ -451,8 +487,7 @@ button[type="submit"] {
         <img src="image13.png" alt="Gallery Image 5">
         <img src="image15.png" alt="Gallery Image 6">
       </div>
-    </section>
-  </a>
+  </section>
 <section id="testimonials" class="testimonials">
   <h2 class="section-title">What Clients Say</h2>
   <iframe src="https://simmerynails.setmore.com/reviews" width="100%" height="600" style="border:none;"></iframe>
